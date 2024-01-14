@@ -11,7 +11,6 @@ type Book = {
 
 export default function Form() {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
-  const coversEndpoint = "https://covers.openlibrary.org/b/isbn";
   const { register, handleSubmit } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const replace_space = (author: string) => {
@@ -41,7 +40,10 @@ export default function Form() {
   });
 
   const checked =
-    (book: Book) => (event: React.MouseEvent<HTMLInputElement>) => {};
+    (book: Book) => (event: React.MouseEvent<HTMLInputElement>) => {
+      //add post method with the book info(including the url to the img)
+      // url for the cover img to be saved in the DB - `coversEndpoint + book.cover_i + "-S.jpg"`;
+    };
 
   return (
     <>
