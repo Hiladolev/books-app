@@ -7,7 +7,6 @@ type Book = {
 interface BooksProps {
   savedBooks: Book[];
 }
-//add get method to receive the saved books from the db
 export default function BooksList({ savedBooks }: BooksProps) {
   return (
     <>
