@@ -10,7 +10,7 @@ type Book = {
 };
 
 export default function Form() {
-  const endpoint = "https://openlibrary.org/search.json?q=";
+  const searchEndpoint = "https://openlibrary.org/search.json?q=";
   const { register, handleSubmit } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const replace_space = (author: string) => {
@@ -20,7 +20,7 @@ export default function Form() {
     // dont forget to remove the limit in the url below
     axios
       .get(
-        endpoint +
+        searchEndpoint +
           `title:${data.title}+author:${replace_space(
             data.author_name
           )}&limit=10
