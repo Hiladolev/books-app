@@ -1,9 +1,11 @@
 import axios from "axios";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Form() {
   const endpoint = "https://openlibrary.org/search.json?q=";
   const { register, handleSubmit } = useForm();
+  const [foundBooks, setFoundBooks] = useState();
   const replace_space = (author: string) => {
     return author.replaceAll(" ", "+");
   };
