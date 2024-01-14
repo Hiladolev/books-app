@@ -5,7 +5,10 @@ export default function Form() {
   const onSubmit = handleSubmit((data) => console.log(data));
 
   return (
-    <form onSubmit={onSubmit}>
+    <form
+      onSubmit={onSubmit}
+      style={{ display: "flex", flexDirection: "column" }}
+    >
       <input type="text" placeholder="Title" {...register("title")} />
       <input
         type="text"
