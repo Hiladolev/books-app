@@ -52,12 +52,16 @@ export default function Form() {
         />
         <input type="submit" value="Submit" />
       </form>
-      {foundBooks && (
-        <ul>
+      {foundBooks.length > 0 && (
+        <fieldset>
+          <legend>Save your favorite books:</legend>
           {foundBooks.map((book: Book) => (
-            <li key={book.key}>{book.title}</li>
+            <div key={book.key} style={{ textAlign: "start" }}>
+              <input type="checkbox" id={book.key} name={book.title} />
+              <label htmlFor={book.title}>{book.title}</label>
+            </div>
           ))}
-        </ul>
+        </fieldset>
       )}
     </>
   );
