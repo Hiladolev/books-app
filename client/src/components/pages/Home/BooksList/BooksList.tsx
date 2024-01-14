@@ -7,10 +7,10 @@ type Book = {
 interface BooksProps {
   savedBooks: Book[];
 }
+//add get method to receive the saved books from the db
 export default function BooksList({ savedBooks }: BooksProps) {
   return (
     <>
-      {/* dont forget to add condition - if the there are saved books */}
       <h2>Saved Books:</h2>
       <ul>
         {savedBooks.map((book) => (
