@@ -11,6 +11,7 @@ type Book = {
 
 export default function Form() {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
+  const coversEndpoint = "https://covers.openlibrary.org/b/isbn";
   const { register, handleSubmit } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const replace_space = (author: string) => {
@@ -39,6 +40,9 @@ export default function Form() {
       });
   });
 
+  const checked =
+    (book: Book) => (event: React.MouseEvent<HTMLInputElement>) => {};
+
   return (
     <>
       <form
@@ -58,7 +62,12 @@ export default function Form() {
           <legend>Save your favorite books:</legend>
           {foundBooks.map((book: Book) => (
             <div key={book.key} style={{ textAlign: "start" }}>
-              <input type="checkbox" id={book.key} name={book.title} />
+              <input
+                type="checkbox"
+                id={book.key}
+                name={book.title}
+                onClick={checked(book)}
+              />
               <label htmlFor={book.title}>{book.title}</label>
             </div>
           ))}
