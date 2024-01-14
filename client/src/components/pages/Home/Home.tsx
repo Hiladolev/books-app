@@ -36,6 +36,7 @@ export default function Home() {
   return (
     <>
       <Form />
+      {/* dont forget to add condition - if the there are saved books */}
       <BooksList savedBooks={savedBooks} />
     </>
   );
