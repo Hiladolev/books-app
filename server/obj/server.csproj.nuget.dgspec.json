@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {}
+    "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {
+    "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+        "projectUniqueName": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+        "projectPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
         "packagesPath": "C:\\Users\\hilad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
+        "outputPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hilad\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -41,6 +41,10 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
