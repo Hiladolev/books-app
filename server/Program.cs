@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default")!);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
