@@ -19,6 +19,13 @@ app.MapGet("/api/savedBooks", async ([FromServices] MySqlDataSource db) =>
     var repository = new BookRepository(db);
     return await repository.AllSavedBooks();
 });
+// POST api/book
+app.MapPost("/api/book", async ([FromServices] MySqlDataSource db, [FromBody] BlogPost body) =>
+{
+    var repository = new BookRepository(db);
+    await repository.InsertBook(body);
+    return body;
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

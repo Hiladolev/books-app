@@ -5,7 +5,7 @@ namespace BookApi
 
 public class BookRepository(MySqlDataSource database){
 
-    public async Task InsertAsync(Book book)
+    public async Task InsertBook(Book book)
     {
         using var connection = await database.OpenConnectionAsync();
         using var command = connection.CreateCommand();
