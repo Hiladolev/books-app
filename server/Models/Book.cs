@@ -2,9 +2,9 @@ namespace Server.Models;
 
 public class Book
 {
-    public string key { get; set; }
-    public string title { get; set; }
-    public string author_name { get; set; }
-    public int cover_i { get; set; }
+    public string Key { get; set; }
+    public string Title { get; set; }
+    public string Author_name { get; set; }
+    public int Cover_i { get; set; }
 }
 
