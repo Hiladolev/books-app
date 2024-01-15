@@ -1,8 +1,10 @@
 using System.Data.Common;
+using System.Web.Http.Cors;
 using MySqlConnector;
 
 namespace BookApi;
 
+[EnableCors(origins: "http://localhost:3000", headers: "*", methods: "*")]
 public class BookRepository(MySqlDataSource database){
 
     public async Task InsertBook(Book book)

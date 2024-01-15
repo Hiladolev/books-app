@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import BooksList from "./BooksList/BooksList";
 import Form from "./Form/Form";
+import axios from "axios";
 export default function Home() {
   const savedBooks = [
     {
@@ -33,6 +35,11 @@ export default function Home() {
       title: "The Hobbit",
     },
   ];
+  useEffect(() => {
+    axios
+      .get("http://localhost:5173/api/savedBooks")
+      .then((response) => console.log(response));
+  }, []);
   //add get method to receive the saved books from the db
 
   return (

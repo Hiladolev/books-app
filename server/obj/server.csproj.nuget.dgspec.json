@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {}
+    "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {
+    "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+        "projectUniqueName": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+        "projectPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
         "packagesPath": "C:\\Users\\hilad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
+        "outputPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hilad\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"

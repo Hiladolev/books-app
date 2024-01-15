@@ -13,6 +13,8 @@ builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("D
 
 
 var app = builder.Build();
+
+
 // GET api/savedBooks
 app.MapGet("/api/savedBooks", async ([FromServices] MySqlDataSource db) =>
 {
