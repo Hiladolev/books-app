@@ -1,4 +1,4 @@
-namespace BookApi
+namespace BookApi;
 
 public class Book{
     public string? Key {get;set;}
