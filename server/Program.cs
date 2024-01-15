@@ -20,7 +20,7 @@ app.MapGet("/api/savedBooks", async ([FromServices] MySqlDataSource db) =>
     return await repository.AllSavedBooks();
 });
 // POST api/book
-app.MapPost("/api/book", async ([FromServices] MySqlDataSource db, [FromBody] BlogPost body) =>
+app.MapPost("/api/book", async ([FromServices] MySqlDataSource db, [FromBody] Book body) =>
 {
     var repository = new BookRepository(db);
     await repository.InsertBook(body);
