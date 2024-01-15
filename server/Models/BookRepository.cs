@@ -1,7 +1,7 @@
 using System.Data.Common;
 using MySqlConnector;
 
-namespace BookApi
+namespace BookApi;
 
 public class BookRepository(MySqlDataSource database){
 
