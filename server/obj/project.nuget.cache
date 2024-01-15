@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xK4n791990VmrtgHHRrehdtpwMT/19mMgieC77K6L9o//N68VaP39siomepepn5DPHrhWOOl3MBHM9iukYOY7g==",
+  "dgSpecHash": "VDaiiHDWjaX0YokfsJsmBNhCQTGrWLqx5SH00FEzkuZdWgPlH7y9ke4DXmjZH6OHoOUtQGBjfyaeXwuI9MXtlA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+  "projectFilePath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hilad\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\hilad\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
