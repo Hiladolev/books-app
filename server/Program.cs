@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Server.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<ServerContext>(opt =>
+    opt.UseInMemoryDatabase("BooksList"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
