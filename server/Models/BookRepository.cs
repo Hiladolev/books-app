@@ -14,6 +14,14 @@ public class BookRepository(MySqlDataSource database){
         await command.ExecuteNonQueryAsync();
     }
 
+     public async Task<IReadOnlyList<Book>> AllSavedBooks()
+    {
+        using var connection = await database.OpenConnectionAsync();
+        using var command = connection.CreateCommand();
+        command.CommandText = @"SELECT * FROM books_app.saved_books;";
+        return await ReadAllAsync(await command.ExecuteReaderAsync());
+    }
+
     private async Task<IReadOnlyList<Book>> ReadAllAsync(DbDataReader reader)
     {
         var saved_books = new List<Book>();
@@ -21,14 +29,14 @@ public class BookRepository(MySqlDataSource database){
         {
             while (await reader.ReadAsync())
             {
-                var book = new Book
+                var saved_book = new Book
                 {
                     Key = reader.GetString(0),
                     Title = reader.GetString(1),
                     Author = reader.GetString(2),
-                    Cover_i = reader.GetInt16(2),
+                    Cover_i = reader.GetInt32(3),
                 };
-                saved_books.Add(book);
+                saved_books.Add(saved_book);
             }
         }
         return saved_books;

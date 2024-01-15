@@ -1,3 +1,5 @@
+using BookApi;
+using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,12 @@ builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("D
 
 
 var app = builder.Build();
+// GET api/savedBooks
+app.MapGet("/api/savedBooks", async ([FromServices] MySqlDataSource db) =>
+{
+    var repository = new BookRepository(db);
+    return await repository.AllSavedBooks();
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
