@@ -1,0 +1,40 @@
+/*books list */
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*book's card */
+li {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  width: 200px; /* Set a fixed width or use percentage for responsiveness */
+  text-align: center;
+}
+
+/*book's title */
+cite {
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/*book's author */
+span {
+  font-style: italic;
+  color: #555;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/*book's cover image */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
