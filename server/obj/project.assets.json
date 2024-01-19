@@ -960,11 +960,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+      "projectUniqueName": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
+      "projectPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\server.csproj",
       "packagesPath": "C:\\Users\\hilad\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
+      "outputPath": "C:\\Users\\hilad\\Documents\\Web\\מבחני בית\\books-app\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hilad\\AppData\\Roaming\\NuGet\\NuGet.Config"

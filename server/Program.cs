@@ -1,9 +1,19 @@
 using BookApi;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://localhost:3000");
+                      });
+});
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -13,7 +23,6 @@ builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("D
 
 
 var app = builder.Build();
-
 
 // GET api/savedBooks
 app.MapGet("/api/savedBooks", async ([FromServices] MySqlDataSource db) =>
@@ -28,6 +37,9 @@ app.MapPost("/api/book", async ([FromServices] MySqlDataSource db, [FromBody] Bo
     await repository.InsertBook(body);
     return body;
 });
+
+app.UseCors(MyAllowSpecificOrigins);
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
