@@ -1,4 +1,5 @@
 import Book from "../../../types/Book";
+import "./BooksList.css";
 interface BooksProps {
   savedBooks: Book[];
 }
@@ -9,7 +10,8 @@ export default function BooksList({ savedBooks }: BooksProps) {
       <ul>
         {savedBooks.map((book) => (
           <li key={book.key}>
-            <cite>{book.title}</cite> by {book.author_name}
+            <cite>{book.title}</cite>
+            <span>By {book.author_name}</span>
             <img
               src={`https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg`}
               alt={book.title}
