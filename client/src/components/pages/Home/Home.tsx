@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Form addBook={handleBooksChanges} />
       {/* dont forget to add condition - if the there are saved books */}
-      <BooksList savedBooks={savedBooks} />
+      {savedBooks.length > 0 && <BooksList savedBooks={savedBooks} />}
     </>
   );
 }
