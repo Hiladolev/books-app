@@ -72,7 +72,7 @@ export default function Form({ addBook }: FormProps) {
         <fieldset>
           <legend>Save your favorite books:</legend>
           {foundBooks.map((book: Book) => (
-            <div key={book.key} style={{ textAlign: "start" }}>
+            <div key={book.key}>
               <input
                 type="checkbox"
                 id={book.key}
