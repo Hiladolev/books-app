@@ -53,7 +53,12 @@ export default function Form({ addBook }: FormProps) {
     <>
       <form
         onSubmit={onSubmit}
-        style={{ display: "flex", flexDirection: "column" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginBlockStart: "3%",
+        }}
       >
         <input type="text" placeholder="Title" {...register("title")} />
         <input
