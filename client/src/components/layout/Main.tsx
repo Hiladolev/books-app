@@ -5,12 +5,12 @@ export default function Main() {
     <div
       style={{
         display: "flex",
-        height: "100vh",
-        overflow: "hidden",
+        // height: "100vh",
+        // overflow: "hidden",
         flexDirection: "column",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
-        textAlign: "center",
+        // textAlign: "center",
       }}
     >
       <header></header>
