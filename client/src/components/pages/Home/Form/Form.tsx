@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Book from "../../../types/Book";
+import "./Form.css";
 
 interface FormProps {
   addBook: (book: Book) => void;
@@ -61,12 +62,15 @@ export default function Form({ addBook }: FormProps) {
     <>
       <form
         onSubmit={onSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginBlockStart: "3%",
-        }}
+        className="form-inputs"
+        style={
+          {
+            // display: "flex",
+            // flexDirection: "column",
+            // alignItems: "center",
+            // marginBlockStart: "3%",
+          }
+        }
       >
         <input type="text" placeholder="Title" {...register("title")} />
         <input
