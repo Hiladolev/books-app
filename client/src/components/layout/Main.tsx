@@ -2,13 +2,7 @@ import Home from "../pages/Home/Home";
 
 export default function Main() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <div>
       <header></header>
       <main>
         <Home />
