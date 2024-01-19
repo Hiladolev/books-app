@@ -1,5 +1,9 @@
+/*heading*/
+h2 {
+  font-size: 24px;
+  font-weight: lighter;
+}
 /*books list */
-
 ul {
   list-style: none;
   padding: 0;
