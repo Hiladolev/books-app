@@ -15,7 +15,10 @@ export default function BooksList({ savedBooks }: BooksProps) {
         {savedBooks.map((book) => (
           <li key={book.key}>
             <cite>{book.title}</cite> by {book.author_name}
-            <img src="{book.cover_i}" alt={book.title}></img>
+            <img
+              src={`https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg`}
+              alt={book.title}
+            ></img>
           </li>
         ))}
       </ul>
