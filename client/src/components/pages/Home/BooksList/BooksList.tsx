@@ -1,9 +1,4 @@
-type Book = {
-  title: string;
-  author_name: string;
-  cover_i: number;
-  key: string;
-};
+import Book from "../../../types/Book";
 interface BooksProps {
   savedBooks: Book[];
 }
