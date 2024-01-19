@@ -1,15 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Book from "../../../types/Book";
 
-type Book = {
-  title: string;
-  author_name: string[];
-  cover_i: number;
-  key: string;
-};
+interface FormProps {
+  addBook: (book: Book) => void;
+}
 
-export default function Form() {
+export default function Form({ addBook }: FormProps) {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
   const { register, handleSubmit } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
@@ -30,7 +28,9 @@ export default function Form() {
         const requiredProperties = response.data.docs.map(
           ({ title, author_name, cover_i, key }: Book) => ({
             title,
-            ...author_name,
+            author_name: Array.isArray(author_name)
+              ? author_name.join(", ")
+              : author_name,
             cover_i,
             key,
           })
@@ -41,8 +41,12 @@ export default function Form() {
 
   const checked =
     (book: Book) => (event: React.MouseEvent<HTMLInputElement>) => {
-      //add post method with the book info(including the url to the img)
-      // url for the cover img to be saved in the DB - `coversEndpoint + book.cover_i + "-S.jpg"`;
+      if (event.currentTarget.checked === true) {
+        addBook(book);
+      }
+      // axios
+      //   .post("http://localhost:5173/api/book", book)
+      //   .then((response) => console.log(response));
     };
 
   return (
