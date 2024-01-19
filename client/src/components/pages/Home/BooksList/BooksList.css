@@ -16,10 +16,8 @@ ul {
 li {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin: 10px;
   padding: 15px;
-  width: 200px; /* Set a fixed width or use percentage for responsiveness */
-  text-align: center;
+  width: 50%;
 }
 
 /*book's title */
@@ -42,4 +40,10 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  li {
+    width: 100%;
+  }
 }
