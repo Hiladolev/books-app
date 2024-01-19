@@ -11,6 +11,8 @@ export default function Form({ addBook }: FormProps) {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
   const { register, handleSubmit } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
+  const notFoundMessage = <p>No results found</p>;
+  const [noFoundBooks, setNotFoundBooks] = useState(false);
   const replace_space = (author: string) => {
     return author.replaceAll(" ", "+");
   };
@@ -25,17 +27,23 @@ export default function Form({ addBook }: FormProps) {
     `
       )
       .then((response) => {
-        const requiredProperties = response.data.docs.map(
-          ({ title, author_name, cover_i, key }: Book) => ({
-            title,
-            author_name: Array.isArray(author_name)
-              ? author_name.join(", ")
-              : author_name,
-            cover_i,
-            key,
-          })
-        );
-        setFoundBooks(requiredProperties);
+        console.log(response);
+        if (response.data.numFound === 0) {
+          setNotFoundBooks(true);
+        } else {
+          const requiredProperties = response.data.docs.map(
+            ({ title, author_name, cover_i, key }: Book) => ({
+              title,
+              author_name: Array.isArray(author_name)
+                ? author_name.join(", ")
+                : author_name,
+              cover_i,
+              key,
+            })
+          );
+          setFoundBooks(requiredProperties);
+          setNotFoundBooks(false);
+        }
       });
   });
 
@@ -68,6 +76,7 @@ export default function Form({ addBook }: FormProps) {
         />
         <input type="submit" value="Submit" />
       </form>
+      {noFoundBooks && notFoundMessage}
       {foundBooks.length > 0 && (
         <fieldset>
           <legend>Save your favorite books:</legend>
