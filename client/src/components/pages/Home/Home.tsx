@@ -35,10 +35,14 @@ export default function Home() {
       title: "The Hobbit",
     },
   ];
-  useEffect(() => {
+
+  const fetchSavedBooks = () => {
     axios
-      .get("http://localhost:5173/api/savedBooks")
+      .get(`http://localhost:5173/api/savedBooks`)
       .then((response) => console.log(response));
+  };
+  useEffect(() => {
+    fetchSavedBooks();
   }, []);
   //add get method to receive the saved books from the db
 
