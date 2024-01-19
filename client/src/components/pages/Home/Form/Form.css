@@ -13,3 +13,7 @@ form {
 fieldset {
   border: 2px solid #eee;
 }
+legend {
+  font-size: 24px;
+  font-weight: lighter;
+}
