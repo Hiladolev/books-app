@@ -19,13 +19,10 @@ export default function Form({ addBook }: FormProps) {
   };
   const onSubmit = handleSubmit((data) => {
     setIsLoading(true);
-    // dont forget to remove the limit in the url below
     axios
       .get(
         searchEndpoint +
-          `title:${data.title}+author:${replace_space(
-            data.author_name
-          )}&limit=10
+          `title:${data.title}+author:${replace_space(data.author_name)}
     `
       )
       .then((response) => {
