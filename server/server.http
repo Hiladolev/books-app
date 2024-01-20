@@ -2,5 +2,7 @@
 
 GET {{server_HostAddress}}/api/savedBooks/
 Accept: application/json
-
 ###
+POST {{server_HostAddress}}/api/book/
+Accept: application/json
+Content-Type: application/json
