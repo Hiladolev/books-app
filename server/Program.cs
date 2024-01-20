@@ -38,7 +38,6 @@ app.MapPost("/api/book", async ([FromServices] MySqlDataSource db, [FromBody] Bo
     return body;
 });
 
-app.UseCors(MyAllowSpecificOrigins);
 
 
 // Configure the HTTP request pipeline.
@@ -49,6 +48,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(MyAllowSpecificOrigins);
 
 var summaries = new[]
 {
