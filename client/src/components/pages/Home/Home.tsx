@@ -8,11 +8,9 @@ export default function Home() {
   const [savedBooks, setSavedBooks] = useState<Book[]>([]);
 
   const handleBooksChanges = (book: Book) => {
-    console.log(book);
     axios
       .post(`http://localhost:5173/api/book`, book)
-      .then((response) => console.log(response));
-    setSavedBooks((current) => [...current, book]);
+      .then((response) => setSavedBooks((current) => [...current, book]));
   };
   const fetchSavedBooks = () => {
     axios
