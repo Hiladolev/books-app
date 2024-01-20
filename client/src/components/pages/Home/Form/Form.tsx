@@ -28,7 +28,6 @@ export default function Form({ addBook }: FormProps) {
     `
       )
       .then((response) => {
-        console.log(response);
         if (response.data.numFound === 0) {
           setNotFoundBooks(true);
         } else {
