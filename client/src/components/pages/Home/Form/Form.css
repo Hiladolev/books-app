@@ -1,3 +1,4 @@
+/*title and author name inputs*/
 .form-inputs > input {
   padding: 10px;
   margin: 10px 0;
@@ -10,17 +11,20 @@ form {
   flex-direction: column;
   align-items: center;
 }
+/*element is used to group several controls (books found by search)*/
 fieldset {
   border: 2px solid #eee;
 }
+/*caption for the list of books found*/
 legend {
   font-size: 24px;
   font-weight: lighter;
 }
+/*no books found message*/
 p {
   text-align: center;
 }
-
+/*mouse pointer on submit button*/
 input[type="submit"] {
   cursor: pointer;
 }
