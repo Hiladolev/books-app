@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Book from "../../../types/Book";
 import "./BooksList.css";
 interface BooksProps {
@@ -14,11 +15,11 @@ export default function BooksList({ savedBooks }: BooksProps) {
             <span>By {book.author_name}</span>
             <img
               src={
-                book.cover_i === 0
-                  ? undefined
-                  : `https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg`
+                !!book.cover_i
+                  ? `https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg`
+                  : undefined
               }
-              alt={book.cover_i === 0 ? "No Cover" : book.title}
+              alt={!!book.cover_i ? book.title : "No Cover"}
             ></img>
           </li>
         ))}
