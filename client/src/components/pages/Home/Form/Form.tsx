@@ -10,7 +10,7 @@ interface FormProps {
 
 export default function Form({ addBook }: FormProps) {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const notFoundMessage = <p>No results found</p>;
   const [noFoundBooks, setNotFoundBooks] = useState(false);
@@ -46,6 +46,7 @@ export default function Form({ addBook }: FormProps) {
           setNotFoundBooks(false);
         }
       });
+    reset();
   });
 
   const checked =
