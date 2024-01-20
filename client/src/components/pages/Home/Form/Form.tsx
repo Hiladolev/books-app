@@ -53,9 +53,6 @@ export default function Form({ addBook }: FormProps) {
       if (event.currentTarget.checked === true) {
         addBook(book);
       }
-      // axios
-      //   .post("http://localhost:5173/api/book", book)
-      //   .then((response) => console.log(response));
     };
 
   return (
