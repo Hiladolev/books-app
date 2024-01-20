@@ -11,7 +11,7 @@ public class BookRepository(MySqlDataSource database){
     {
         using var connection = await database.OpenConnectionAsync();
         using var command = connection.CreateCommand();
-        command.CommandText = @"INSERT INTO `saved_books` (`key`, `title`, `author`, `cover_i`) VALUES (@key, @title, @author, @cover_i);";
+        command.CommandText = @"INSERT INTO `saved_books` (`author_name`, `cover_i`, `key`, `title`) VALUES (@author_name, @cover_i, @key, @title);";
         BindParams(command, book);
         await command.ExecuteNonQueryAsync();
     }
@@ -35,7 +35,7 @@ public class BookRepository(MySqlDataSource database){
                 {
                     Key = reader.GetString(0),
                     Title = reader.GetString(1),
-                    Author = reader.GetString(2),
+                    Author_name = reader.GetString(2),
                     Cover_i = reader.GetInt32(3),
                 };
                 saved_books.Add(saved_book);
@@ -45,9 +45,10 @@ public class BookRepository(MySqlDataSource database){
     }
     private static void BindParams(MySqlCommand cmd, Book book)
     {
-        cmd.Parameters.AddWithValue("@key", book.Key);
-        cmd.Parameters.AddWithValue("@title", book.Title);
-        cmd.Parameters.AddWithValue("@author", book.Author);
-        cmd.Parameters.AddWithValue("@cover_i", book.Cover_i);
+cmd.Parameters.Add("@key", MySqlDbType.VarChar).Value = book.Key;
+cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = book.Title;
+cmd.Parameters.Add("@author_name", MySqlDbType.VarChar).Value = book.Author_name;
+cmd.Parameters.Add("@cover_i", MySqlDbType.Int32).Value = book.Cover_i;
+
     }
 }
