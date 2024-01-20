@@ -67,7 +67,7 @@ export default function Form({ addBook }: FormProps) {
         <input type="submit" value="Submit" />
       </form>
       {noFoundBooks && notFoundMessage}
-      {foundBooks.length > 0 && (
+      {foundBooks.length > 0 && !noFoundBooks && (
         <fieldset>
           <legend>Save your favorite books:</legend>
           {foundBooks.map((book: Book) => (
