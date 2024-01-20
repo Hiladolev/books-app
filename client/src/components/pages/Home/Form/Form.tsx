@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Book from "../../../types/Book";
 import "./Form.css";
-
 interface FormProps {
   addBook: (book: Book) => void;
 }
@@ -11,6 +10,7 @@ interface FormProps {
 export default function Form({ addBook }: FormProps) {
   const searchEndpoint = "https://openlibrary.org/search.json?q=";
   const { register, handleSubmit, reset } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const notFoundMessage = <p>No results found</p>;
   const [noFoundBooks, setNotFoundBooks] = useState(false);
@@ -18,6 +18,7 @@ export default function Form({ addBook }: FormProps) {
     return author.replaceAll(" ", "+");
   };
   const onSubmit = handleSubmit((data) => {
+    setIsLoading(true);
     // dont forget to remove the limit in the url below
     axios
       .get(
@@ -28,6 +29,7 @@ export default function Form({ addBook }: FormProps) {
     `
       )
       .then((response) => {
+        setIsLoading(false);
         if (response.data.numFound === 0) {
           setNotFoundBooks(true);
         } else {
@@ -64,7 +66,7 @@ export default function Form({ addBook }: FormProps) {
           placeholder="Author name"
           {...register("author_name")}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value={isLoading ? "loading..." : "Submit"} />
       </form>
       {noFoundBooks && notFoundMessage}
       {foundBooks.length > 0 && !noFoundBooks && (
