@@ -42,7 +42,7 @@ img {
   height: auto;
   border-radius: 5px;
 }
-
+/*cards width by screen width*/
 @media screen and (max-width: 768px) {
   li {
     width: 100%;
