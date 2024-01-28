@@ -1,4 +1,5 @@
 using BookApi;
+using BookApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

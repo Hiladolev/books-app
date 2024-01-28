@@ -1,5 +1,6 @@
 using System.Data.Common;
 using System.Web.Http.Cors;
+using BookApi.Models;
 using MySqlConnector;
 
 namespace BookApi;

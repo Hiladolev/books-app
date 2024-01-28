@@ -1,4 +1,4 @@
-namespace BookApi;
+namespace BookApi.Models;
 
 public class Book{
     public string Key {get;set;} = "";
