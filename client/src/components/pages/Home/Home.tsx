@@ -9,12 +9,12 @@ export default function Home() {
 
   const handleBooksChanges = (book: Book) => {
     axios
-      .post(`http://localhost:5173/api/book`, book)
+      .post(`http://localhost:5000/api/book`, book)
       .then((response) => setSavedBooks((current) => [...current, book]));
   };
   const fetchSavedBooks = () => {
     axios
-      .get(`http://localhost:5173/api/savedBooks`)
+      .get(`http://localhost:5000/api/savedBooks`)
       .then((response) => setSavedBooks(response.data));
   };
   useEffect(() => {
