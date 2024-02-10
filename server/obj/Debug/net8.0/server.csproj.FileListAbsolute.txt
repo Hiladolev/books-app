@@ -34,9 +34,3 @@ C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\obj\Debug\net8.0
 C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\obj\Debug\net8.0\server.pdb
 C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\obj\Debug\net8.0\ref\server.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\System.Web.Cors.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\System.Net.Http.Formatting.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\System.Web.Http.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\System.Web.Http.Cors.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\hilad\Documents\Web\מבחני בית\books-app\server\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
