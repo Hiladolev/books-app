@@ -1,7 +1,7 @@
-using BookApi;
 using BookApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
+using BookApi.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);

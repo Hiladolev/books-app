@@ -2,7 +2,7 @@ using System.Data.Common;
 using BookApi.Models;
 using MySqlConnector;
 
-namespace BookApi;
+namespace BookApi.Data;
 
 public class BookRepository(MySqlDataSource database){
 
